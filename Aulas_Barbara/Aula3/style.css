@@ -1,0 +1,35 @@
+body{
+    display: flex;
+    margin: 50px;
+    background-color: green;
+    justify-content: center;
+    padding: 90px;
+}
+.container {
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: yellow;
+}
+button{
+    background-color: blue;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+}
+
+input {
+    padding: 9.5px;
+
+}
+
+h1 {
+    color: white;
+    text-shadow: 
+    1px 1px 0 rgb(40, 40, 40),
+    -1px -1px 0 rgb(40, 40, 40),
+    1px  -1px 0 rgb(40, 40, 40),
+    -1px  1px 0 rgb(40, 40, 40);
+}

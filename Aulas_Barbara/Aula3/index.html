@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifique seu cupom</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="container">
+    
+    <h1>Verifique seu cupom</h1>
+    <input id="caixa" type="text" placeholder="Coloque aqui seu cupom">
+    <button onclick="clicou()" id="butao">Verificar</button>
+    
+    <p id="vv"></p>
+
+    <img id="imagem" src="" alt="">
+
+    
+    
+    <script>
+https://i.pinimg.com/236x/fb/03/3e/fb033e04b60df7feff3ed993137be4d7.jpg
+    function clicou() {
+
+        const caixa = document.getElementById('caixa');
+        const butao = document.getElementById('butao');
+        const resul = document.getElementById('vv');
+        const imagem = document.getElementById('imagem')
+
+        const cupom = "Bolsonaro2026"
+
+        if (caixa.value == cupom){
+
+            resul.innerHTML="Bolsonaro 2026 é o cupom correto, BOLSONARO É NORTE,<br> BOLSONARO É NORDESTE, VAI 17, VAI 17!!!!!!!!!!!!!!!";
+            imagem.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Jair_Bolsonaro_2019_Portrait_%283x4_cropped%29.jpg/330px-Jair_Bolsonaro_2019_Portrait_%283x4_cropped%29.jpg";
+
+        }else {
+
+            resul.innerHTML= "cupom incorreto, você não é um mito";
+            imagem.src = "";
+        }
+        if (caixa.value == "lula"){
+            resul.innerHTML = "BOOOOOOOOOOO LADRAOOOOOOOOOOO";
+            imagem.src = "https://i.pinimg.com/236x/fb/03/3e/fb033e04b60df7feff3ed993137be4d7.jpg";
+        }
+
+    }
+    </script>
+
+</div>    
+</body>
+</html>
