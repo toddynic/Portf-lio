@@ -17,12 +17,15 @@ body {
     display: grid;
     padding: 40px;
     width: 10%;
+    display: list-item;
 }
 
 .container2 {
     padding: 10px;
     background-color: white;
     margin: 10px;
+    align-content: end;
+    padding-top: 90px;
 }
 
 .container {
@@ -32,7 +35,12 @@ body {
     border-radius: 20px;
     padding: 10px;
     box-sizing: initial;
-    
+    justify-content: flex-end ;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
 }
 
 button {
