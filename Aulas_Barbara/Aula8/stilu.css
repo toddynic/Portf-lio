@@ -1,0 +1,73 @@
+/* Reset geral */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(214, 214, 214);
+  font-family: sans-serif;
+
+  display: grid;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
+  min-height: 100vh;
+
+    background-image: url('https://tse1.mm.bing.net/th/id/OIP.t3_nI9PxktdCBXPSmnoDKAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3');
+    background-size: cover;         /* cobre toda a tela */
+    background-position: center;    /* centraliza a imagem */
+    background-repeat: no-repeat;   /* evita repetição */
+}
+
+div {
+    background-color: rgb(255, 255, 0);
+    border: 2px solid #333;
+}
+
+/* Elementos principais */
+header, ul, .nono, div {
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+}
+
+header {
+    font-size: 25px;
+    background-color: rgb(255, 255, 0);
+    border: 2px solid #333;
+}
+/* Lista */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(0, 255, 0);
+}
+
+li {
+  background-color: rgb(41, 41, 255);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+  border: 2px solid #333;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+li:hover {
+  background-color: #0000FF;
+}
+
+.nono {
+    background-color: rgb(0, 255, 0);
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;              /* define a largura do bloco */
+    min-width: 300px;        /* garante responsividade mínima */
+    margin: 20px auto;       /* centraliza horizontalmente */
+    padding: 10px;
+    border: 2px solid #333;
+}
