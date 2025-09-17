@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            transition: background-color 2s;
+        }
+        
+        div {
+            text-align: center;
+        }
+
+        button {
+            border-radius: 4px;
+            background-color: rgb(50, 50, 255);
+            border: none;
+            color: white;
+            font-size: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <h1 id="titulo">clica ai para mudar o tema</h1>
+        
+        <p id="hora"></p>
+        
+        <p id="data"></p>
+    </div>
+
+
+
+    <script>
+        function mudar() {
+            const dt = new Date();
+            
+            const hora = dt.getHours();
+            const minutos = dt.getMinutes();
+            const segundos = dt.getSeconds();
+            
+            const tudao = hora+minutos/60;
+            
+            const titulo = document.getElementById("titulo");
+
+            const horadispley = document.getElementById("hora");
+            const data = document.getElementById("data");
+            
+            titulo.innerHTML = "Bom Dia!"
+
+
+            let cor;
+            let mensagem;
+
+            if (tudao>=0 && tudao<=12) {
+
+                const porc = 255*tudao/12;
+                
+                const rgb = "rgb("+porc.toString()+","+porc.toString()+",0)";
+
+                document.body.style.backgroundColor = rgb;
+
+            }
+            if (tudao>12 && tudao<24) {
+
+                const porc = -((tudao-12)*255/12-255);
+                
+                const rgb = "rgb("+porc.toString()+","+porc.toString()+",0)";
+
+                document.body.style.backgroundColor = rgb;
+            }
+
+            horadispley.innerHTML = hora.toString().padStart(2,"0") + ":" + minutos.toString().padStart(2,"0")+":"+ segundos.toString().padStart(2,"0") +"⏳"
+
+            const opca = {weekday:"long",year:'numeric',month:'long',day:'numeric'};
+
+            const dataformatada = dt.toLocaleDateString("pt-BR",opca);
+
+            data.innerHTML = dataformatada;
+
+
+        }
+        mudar();
+        setInterval(mudar,1000);
+
+    </script>
+</body>
+</html>
