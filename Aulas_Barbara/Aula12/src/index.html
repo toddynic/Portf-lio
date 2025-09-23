@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Tempo</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="manifest" href="manifest.json">
+    <meta nome="theme-color" content="#000000"
+    
+</head>
+<style>
+    body{
+     margin: 0;
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-family: Arial, Helvetica, sans-serif;
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     
+    }
+
+    #container {
+     background-color: rgba(221, 219, 219, 0.8);
+     padding: 40px;
+     max-width: 400px;
+     width: 100%;
+     border-radius: 10px;
+     text-align: center;
+    }
+        
+       
+    @media(max-width: 480px) {
+        h1 {font-size: 22px;}
+        p { font-size: 14px;}
+        #container {width: 70%;}
+    }
+</style>    
+<body>
+    <div id="container">
+    <h1 id="titulo"></h1>
+    <p id="hora"></p>
+    <p id="data"></p>
+    <p id="tempo"></p>
+     <p id="frase"></p>
+    </div>
+    <script>
+    function trocar() {
+    const agora = new Date();
+    const hora = agora.getHours();
+    const minutos = agora.getMinutes().toString().padStart(2, "0");
+    const segundos = agora.getSeconds().toString().padStart(2, "0");
+    const opcoes = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+    const dataFormatada = agora.toLocaleDateString("pt-br", opcoes);
+    const tempo = agora.getDay();
+    let cor;
+    let mensagem;
+    let imagem;
+    
+    if (hora>= 6 && hora <12){
+   imagem ="url('manha.jpg')"
+
+    mensagem = "Bom dia ☀️"
+    frases = ["Bom dia, que Deus abençoe o seu dia.",
+              "Levanta com fé no coração, que o dia vai ser bom, se Deus quiser.",
+              "Mais um dia com saúde, já é vitória. Que ele seja abençoado!"
+             ]
+    } else if (hora>= 12 && hora <18){
+    imagem = "url('tarde.jpg')";
+    mensagem = "Boa tarde ⛅";
+    frases = ["Boa tarde, e que a saúde e a alegria te sigam até a noite.",
+              "A tarde está bonita, né? Vamos aproveitar com calma e carinho. Boa tarde!",
+              "Que a tarde traga serenidade e bons momentos. Bom descanso."
+             ]
+    } else if (hora >= 18 && hora < 23){
+    imagem = "url('noite.jpg')";
+    mensagem = "Boa noite 🌙";
+    frases = ["Boa noite! Durma em paz e acorde renovado para um novo dia de bênçãos.",
+              "Que a paz de Deus invada seu coração nesta noite e te traga tranquilidade.",
+              "Boa noite, Que os anjos guardem o seu sono e te dêem bons sonhos."
+             ]
+    } else {
+    imagem = "url('madrugada.jpg')";
+    mensagem = "Hora de descansar 🌑";
+    frases = ["A madrugada é silenciosa, mas cheia de oração. Que Deus te proteja durante o descanso. Boa madrugada!",
+              "Se acordou agora, que tenha um descanso tranquilo e abençoado. Boa madrugada!",
+              "Na calma da madrugada, que você sinta a presença de Deus te protegendo. Boa madrugada!"]
+    }
+     if (tempo >=1 || tempo <=5){
+     men = "Vai Trabalhar vagabundo!" ;
+
+     }else {
+       men = "Descansa um pouco... Amanha começa tudo de novo.";
+      }
+    document.body.style.backgroundImage=imagem;
+    document.body.style.backgroundColor = cor;
+    document.getElementById("titulo").innerHTML = mensagem;
+    document.getElementById("hora").innerHTML= hora + ":" + minutos + ":" + segundos;
+    document.getElementById("data").innerHTML = '📅' + dataFormatada;
+    document.getElementById("tempo").innerHTML= men;
+    }
+    let frases = [];
+    function trocarFrase() {
+        if (frases.length > 0) {
+            const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)]
+            document.getElementById("frase").innerHTML = fraseAleatoria;
+        }
+    }
+    
+    trocar();
+    setInterval (trocar, 1000);
+
+    trocarFrase();
+    setInterval(trocarFrase, 10000);
+</script>
+
+<script>
+    if ("serviceWorker" in navigator){
+        navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker registrado"))
+        .catch(err => console.log(" Erro no SW:",err));
+    }
+</script>
+</body>
+</html>
