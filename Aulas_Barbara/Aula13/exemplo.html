@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculadora de Juros Compostos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7f8;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 800px;
+      width: 100%;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #555;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 8px 10px;
+      margin-bottom: 18px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+      margin-bottom: 20px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .resultado {
+      margin-top: 20px;
+      background: #e9f5ff;
+      padding: 15px;
+      border-radius: 5px;
+      color: #004085;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 8px 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+    .chart-container {
+      width: 320px;
+      margin: 0 auto 40px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora de Juros Compostos</h1>
+    <form id="formJuros">
+      <label for="capital">Capital Inicial (R$):</label>
+      <input type="number" id="capital" step="0.01" min="0" required />
+
+      <label for="taxa">Taxa de Juros (% ao período):</label>
+      <input type="number" id="taxa" step="0.01" min="0" required />
+
+      <label for="periodos">Número de Períodos:</label>
+      <input type="number" id="periodos" min="1" required />
+
+      <button type="submit">Calcular</button>
+    </form>
+
+    <div class="resultado" id="resultado"></div>
+
+    <div id="tabela-container"></div>
+
+    <div class="chart-container">
+      <canvas id="graficoPizza"></canvas>
+    </div>
+  </div>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const form = document.getElementById('formJuros');
+    const resultado = document.getElementById('resultado');
+    const tabelaContainer = document.getElementById('tabela-container');
+    const ctx = document.getElementById('graficoPizza').getContext('2d');
+    let graficoPizza = null;
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const capital = parseFloat(document.getElementById('capital').value);
+      const taxa = parseFloat(document.getElementById('taxa').value) / 100;
+      const periodos = parseInt(document.getElementById('periodos').value);
+
+      // Montante final
+      const montante = capital * Math.pow(1 + taxa, periodos);
+
+      resultado.textContent = `Valor Final: R$ ${montante.toFixed(2)}`;
+
+      // Gerar tabela
+      gerarTabela(capital, taxa, periodos);
+
+      // Gerar gráfico pizza
+      gerarGraficoPizza(capital, montante);
+    });
+
+    function gerarTabela(capital, taxa, periodos) {
+      let html = `
+        <table>
+          <thead>
+            <tr>
+              <th>Período</th>
+              <th>Valor Acumulado (R$)</th>
+              <th>Juros do Período (R$)</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      for(let i = 1; i <= periodos; i++) {
+        const valorAcumulado = capital * Math.pow(1 + taxa, i);
+        // Juros ganhos nesse período: valor acumulado atual menos acumulado anterior
+        const valorAcumuladoAnterior = i === 1 ? capital : capital * Math.pow(1 + taxa, i -1);
+        const jurosPeriodo = valorAcumulado - valorAcumuladoAnterior;
+
+        html += `
+          <tr>
+            <td>${i}</td>
+            <td>R$ ${valorAcumulado.toFixed(2)}</td>
+            <td>R$ ${jurosPeriodo.toFixed(2)}</td>
+          </tr>
+        `;
+      }
+
+      html += `
+          </tbody>
+        </table>
+      `;
+
+      tabelaContainer.innerHTML = html;
+    }
+
+    function gerarGraficoPizza(capital, montante) {
+      const jurosGanhos = montante - capital;
+
+      if(graficoPizza !== null) {
+        graficoPizza.destroy();
+      }
+
+      graficoPizza = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Capital Inicial', 'Juros Ganhos'],
+          datasets: [{
+            data: [capital, jurosGanhos],
+            backgroundColor: ['#007bff', '#28a745'],
+            hoverOffset: 30
+          }]
+        },
+        options: {
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                font: {
+                  size: 14
+                }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  const label = context.label || '';
+                  const valor = context.parsed || 0;
+                  return `${label}: R$ ${valor.toFixed(2)}`;
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Juros Compostos</title>
+    <style>
+/**/
+        body {
+            background-color: rgb(228, 228, 228);
+        }
+
+
+        .container, .container2 {
+            /*alinhamento*/
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            
+            /*tamanho*/
+            margin: 30px;
+            margin-left: 30%;
+            margin-right: 30%;
+
+            /*estetica*/
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px black;
+            padding: 10px;
+
+
+
+            background-color: rgb(255, 255, 255);
+            color: rgb(46, 46, 46);
+        }
+
+        button {
+            transition: background-color 0.5s ease;
+            background-color: rgb(36, 36, 255);
+            color: white;
+            border: none;
+            margin: 10px;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        button:hover {
+            background-color: rgb(18, 18, 253);
+        }
+
+        input{
+            padding: 10px;
+        }
+
+        .valor {
+            display: flex;
+            justify-content: center;
+        }
+
+        .valoe{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <h2>Calculadora de Juros compostos</h4>
+
+        <label for="ValorInicial">Coloque o valor inicial</label>
+        <input id="Valor0" type="number" placeholder="Valor inicial">
+
+        <label for="Taxa">Coloque a taxa anual em %</label>
+        <input id="Taxa" type="number" placeholder="Taxa">
+
+        <label for="Ciclos">Coloque o número de ciclos</label>
+        <input id="Ciclo" type="number" placeholder="Ciclos">
+
+        <button onclick="clicou()">Clique para Calcular</button>
+    </div>
+
+    <div class="container2">
+
+        <table id="planilha"></table>
+       
+        <div class="valor">
+        
+            <div class="valoe">
+                <h2>Valor Total</h2>
+                <h3 id="valortotal">0</h3>
+            </div>
+        
+            <div class="valoe">
+                <h2>Valor Ganho</h2>
+                <h3 id="valorganho">0</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+
+/*tr
+td*/
+
+
+        function clicou() {
+       
+            let html = `
+            <thead>
+                <tr>
+                    <th>Periodo</th>
+                    <th>Valor Acumulado</th>
+                    <th>Valor do juros</th>
+                </tr>
+            </thead>
+            <tbody>`;
+
+            const Valor0 = document.getElementById("Valor0").value;
+            const Taxa = document.getElementById("Taxa").value / 100;
+            const Ciclo = document.getElementById("Ciclo").value;
+
+            const valortotal = document.getElementById("valortotal");
+            const valorganho = document.getElementById("valorganho");
+
+            console.log(Taxa);
+
+
+            for(let i = 1; i <= Ciclo;i++) {
+                
+            }
+            
+            valortotal.innerHTML =  (Valor0 * Math.pow(Taxa+1,Ciclo)).toFixed(2);
+        }
+
+
+    </script>
+</body>
+</html>
