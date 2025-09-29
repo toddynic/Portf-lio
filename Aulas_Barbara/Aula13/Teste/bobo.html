@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Fórum Bolsonaro</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    header {
+      background-color: #009739; /* verde da bandeira */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header img {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      height: 80px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px black;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .forum-container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #fffbea;
+      border: 2px solid #f1c40f; /* amarelo */
+      border-radius: 10px;
+    }
+
+    .new-post {
+      margin-bottom: 30px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 80px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #f1c40f;
+      color: black;
+      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e1b700;
+    }
+
+    .post {
+      border-top: 1px solid #ccc;
+      padding: 15px 0;
+    }
+
+    .post-user {
+      font-weight: bold;
+      color: #009739;
+    }
+
+    .post-content {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #009739;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Fórum do Bolsonaro - Apoie o mito!</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Jair_Bolsonaro_2019_Portrait_%283x4_cropped_center%29.jpg/330px-Jair_Bolsonaro_2019_Portrait_%283x4_cropped_center%29.jpg" alt="Bolsonaro">
+  </header>
+
+  <div class="forum-container">
+    <div class="new-post">
+      <h2>Nova Mensagem</h2>
+      <input id="novonome" type="text" placeholder="Digite seu nome...">
+      <textarea id="novaMensagem" placeholder="Digite sua mensagem..."></textarea>
+      <button onclick="postarMensagem()">Postar</button>
+    </div>
+
+    <div id="posts">
+      <!-- Mensagens aparecerão aqui -->
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Fórum do Bolsonaro - Patria Amada Bostil
+  </footer>
+
+  <script>
+    function postarMensagem() {
+      const textarea = document.getElementById("novaMensagem");
+      const texto = textarea.value.trim();
+      const nomearea = document.getElementById("novonome");
+      let nome = nomearea.value.trim();
+
+      if (texto === "") {
+        alert("Digite alguma coisa!");
+        return;
+      }
+      
+      if (nome === "") {
+        nome = "Usuário Anônimo";
+      }
+
+      const postsContainer = document.getElementById("posts");
+
+      const postDiv = document.createElement("div");
+      postDiv.classList.add("post");
+
+      postDiv.innerHTML = `
+        <div class="post-user">${nome}</div>
+        <div class="post-content">${texto}</div>
+      `;
+
+      postsContainer.prepend(postDiv);
+      textarea.value = "";
+      nomearea.value = "";
+    }
+  </script>
+
+</body>
+</html>
