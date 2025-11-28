@@ -9,13 +9,25 @@
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, rgb(23, 197, 0), #7dff78);
+            background: linear-gradient(135deg, rgb(136, 255, 120), #6aee65);
             font-family: Arial, Helvetica, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             color: #fff;
+        }
+
+
+        .primeiro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .imagem {
+            margin: 10px;
         }
 
         .chatbox {
@@ -25,18 +37,18 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(12px);
             text-align: center;
-            width: 300px;
+            width: 400px;
         }
 
-        .chatbox h2 {
+        .chatbox h1 {
             margin-bottom: 20px;
-            font-size: 26px;
+            font-size: 40px;
             font-weight: bold;
         }
 
         .chatbox button {
             padding: 12px 25px;
-            background: #006d88;
+            background: #2b474e;
             border: none;
             border-radius: 10px;
             color: white;
@@ -53,9 +65,13 @@
 </head>
 
 <body>
-    <div class="chatbox">
-        <h2>Chatbot por Voz</h2>
-        <button onclick="ouvir()">Falar Agora</button>
+    <div class="primeiro">
+        <div class="chatbox">
+            <h1>Chatbot por Voz</h2>
+            <img class="imagem" src="robo_renovado.png" width="300" height="auto" alt="">
+            <button onclick="ouvir()">Falar Agora</button>
+            <h4 id="legenda"></h4>
+        </div>
     </div>
 
     <script>
