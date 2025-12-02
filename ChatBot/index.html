@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot da Enfermagem</title>
+    <style>
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+        #chat {
+            width: 80%;
+            max-width: 600px;
+            margin-top: 15px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+            height: 400px;
+            overflow-y: auto;
+        }
+        .user {
+            background: #d1e7ff;
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+        }
+        .bot {
+            background: #e8ffe5;
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>ChatBot da Enfermagem</h2>
+        <input id="caixa" type="text" placeholder="Digite sua pergunta...">
+        <button onclick="Gemini()">Enviar</button>
+        <div id="chat"></div>
+    </div>
+
+    <script>
+        function EnviarMensagem(texto, classe) {
+            const chat = document.getElementById("chat");
+            const p = document.createElement("p");
+            p.className = classe;
+            p.textContent = texto;
+            chat.appendChild(p);
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function Gemini() {
+            const input = document.getElementById("caixa");
+            const mensagem = input.value.trim();
+            if (mensagem === "") return;
+
+            // mostra mensagem do usuário
+            EnviarMensagem("Você: " + mensagem, "user");
+
+            input.value = "";
+
+            // Enviar ao PHP
+            fetch("gemini.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: "mensagem=" + encodeURIComponent(mensagem)
+            })
+            .then(res => res.text())
+            .then(resposta => {
+                EnviarMensagem("Bot: " + resposta, "bot");
+            })
+            .catch(err => {
+                EnviarMensagem("Erro ao conectar ao servidor.", "bot");
+                console.error(err);
+            });
+        }
+    </script>
+</body>
+</html>
