@@ -34,14 +34,45 @@
             border-radius: 5px;
             margin-bottom: 8px;
         }
+
+        #ferramentas {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 600px;
+        }
+
+        #fonte {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        #fonte button {
+            width: 25px;
+            height: 25px;
+        }
+
+        input {
+            width: 600px;
+        }
     </style>
 </head>
 <body>
     <div id="container">
-        <h2>ChatBot da Enfermagem</h2>
-        <input id="caixa" type="text" placeholder="Digite sua pergunta...">
-        <button onclick="Gemini()">Enviar</button>
+        <h2>NurseX</h2>
+        
         <div id="chat"></div>
+        <input id="caixa" type="text" placeholder="Digite sua pergunta...">
+        <div id="ferramentas">
+            <button onclick="limpar()">Limpar</button>
+            <button onclick="Gemini()">Enviar</button>
+            <div id="fonte">   
+                <button onclick="fonte(1)">+</button>
+                <button onclick="fonte(-1)">-</button>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -72,13 +103,41 @@
             })
             .then(res => res.text())
             .then(resposta => {
-                EnviarMensagem("Bot: " + resposta, "bot");
+                EnviarMensagem("NurseX : " + resposta, "bot");
             })
             .catch(err => {
                 EnviarMensagem("Erro ao conectar ao servidor.", "bot");
                 console.error(err);
             });
+        
+        input.value = "";
         }
+
+        function limpar() {
+            const chat = document.getElementById("chat");
+            chat.innerHTML = "";
+        }
+
+
+        let tamanho = 16;
+
+        function fonte(num) {
+            
+            if (num == -1 && tamanho < 14){return;}
+
+            tamanho = tamanho + num;
+    
+            const chat = document.getElementById("chat");
+            chat.style.fontSize= tamanho.toString() + "px";
+
+        }
+
+    
+        window.addEventListener("keydown", (event)=>{
+            if (event.key === "Enter"){Gemini()}
+        })
+
+
     </script>
 </body>
 </html>
