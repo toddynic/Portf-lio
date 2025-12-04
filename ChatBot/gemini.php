@@ -2,7 +2,7 @@
 
 header("Content-Type: text/plain; charset=UTF-8");
 
-$apiKey = "AIzaSyAUcQ_PjAZLEZRqzytpdYUnr23dftTHTSg"; // coloque sua API KEY aqui
+$apiKey = "KEY"; // coloque sua API KEY aqui
 
 $prompt = $_POST["mensagem"] ?? "";
 
@@ -15,6 +15,16 @@ $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash
 
 // Corpo da requisição
 $data = [
+    "systemInstruction" => [
+        "parts" => [
+            [
+                "text" => "
+Você é especialista em enfermagem e sempre fala no contexto dela.
+Escreva apenas 3 linha.
+"
+            ]
+        ]
+    ],
     "contents" => [
         [
             "parts" => [
