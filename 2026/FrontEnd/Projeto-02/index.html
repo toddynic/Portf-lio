@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="login" onsubmit="alert('Deu Bom')">
+
+        <h2>LOGIN</h3>
+
+        <label>Name</label>
+        <input type="text" required>
+
+        <label>E-mail</label>
+        <input type="email" required>
+
+        <label>Senha</label>
+        <input type="password" required>
+
+        <label>Data de nascimento</label>
+        <input type="date" required>
+
+        <label>Gênero</label>
+        
+        <div id="genero">
+            <input type="radio" name="genero" value="Masculino" required>
+            <label>Masculino</label>
+            <input type="radio" name="genero" value="Feminino" required>
+            <label>Feminino</label>
+        </div>
+
+        <label>Curso</label>
+        <select required>
+            <option value="">Selecione</option>
+            <option value="">Engenharia de software</option>
+            <option value="">Análise e desenvolvimento de sistemas</option>
+        </select>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+</body>
+</html>
