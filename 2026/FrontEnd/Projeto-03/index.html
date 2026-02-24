@@ -3,30 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muque Maker</title>
+    <title>EvoFit</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h3><strong>Muque Maker</strong></h3>
+        <h3><img src="utilitarios/logo.png" height="30px" style="transform: scale(3.5); margin-left: 20px;"></h3>
     </header>
 
 
     <main>
         <section>
             <h2>Quer ter mais disposição e saúde?<br>Aqui é o lugar certo!</h2>
-            <p>Nois da Muque Maker queremos montar seu primeiro treino!<br>Resultados em menos de 3 meses.
+            <p>Nois da EvoFit queremos montar seu primeiro treino!<br>Resultados em menos de 3 meses.
             </p>
             <button><strong>Começar agora!</strong></button>
             <div id="carrossel">
-                <img src="carrossel/imagem1.webp">
+                <img src="carrossel/imagem1.webp" class="ativa">
                 <img src="carrossel/imagem2.jpg">
                 <img src="carrossel/imagem3.webp">
             </div>
+            <div id="avanco">
+                <img src="utilitarios/seta.svg" onclick="retroceder()" style="transform: scaleX(-1);align-self: flex-end;">
+                <img src="utilitarios/seta.svg" onclick="avancar()">
+            </div>
         </section>
         <section>
-            <h2>Conheça a Muque Maker</h2>
-            <p>A Muque Maker é a maior academia de BH, com várias unidades ao redor do Brasil.<br>
+            <h2>Conheça a EvoFit</h2>
+            <p>A EvoFit é a maior academia de BH, com várias unidades ao redor do Brasil.<br>
             Sempre apoiamos ao maximo mosso alunos em seus exercicios e a pratica em esportes.</p>
             <h3>Filosofia</h1>
             <p>Acreditamos que todo ser humano deve praticar no minimo 3 exercicios por semana, para ter saúde disposição e longividade!</p>
@@ -34,5 +38,6 @@
     </main>
 
     <footer>Copyright © 2026</footer>
+    <script src="script.js"></script>
 </body>
 </html>
