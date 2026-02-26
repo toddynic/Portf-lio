@@ -58,6 +58,7 @@ section button {
 
 #carrossel {
     display: grid;
+    justify-items: center;
     border: 10px;
     justify-content: center;
     margin-top: 20px;
@@ -79,7 +80,7 @@ section button {
     opacity: 100%;
     transform: scale(1);
 }
-
+/*
 footer {
     display: flex;
     justify-content: center;
@@ -91,7 +92,7 @@ footer {
     background-color: rgb(0, 100, 255);
     color: white;
 }
-
+*/
 #avanco {
     display: flex;
     justify-content: space-evenly;
@@ -102,4 +103,108 @@ footer {
 #avanco img {
     display: flex; 
     height: 50px;
+}
+
+#contato {
+    align-self: self-end;
+    flex-direction: column;
+}
+
+/**/
+
+/* ===== MENSALIDADES ===== */
+
+.mensalidades {
+    text-align: center;
+}
+
+.planos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.plano {
+    background-color: #f5f5f5;
+    padding: 20px;
+    width: 280px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.plano:hover {
+    transform: scale(1.05);
+}
+
+.plano h3 {
+    font-size: 28px;
+}
+
+.preco {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(0, 100, 255);
+}
+
+.plano ul {
+    list-style: none;
+    padding: 0;
+}
+
+.plano ul li {
+    margin: 10px 0;
+}
+
+.plano button {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.destaque {
+    background: linear-gradient(135deg, rgb(0,100,255), rgb(0,180,255));
+    color: white;
+}
+
+.destaque .preco {
+    color: white;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    margin-top: 50px;
+    padding: 30px 20px;
+    background-color: rgb(0, 100, 255);
+    color: white;
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-container div {
+    margin-bottom: 15px;
+}
+
+.footer-container a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.footer-container a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
 }
