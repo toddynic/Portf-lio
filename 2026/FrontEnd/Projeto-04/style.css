@@ -1,0 +1,44 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url("./fundo/fundo.jpeg");
+    background-size: cover;
+    justify-items: center;
+    height: 70vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateX(-400);
+    animation: slideIn 3s forwards;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.9);
+    flex-direction: column;
+    width: 300px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    margin-top: 200px;
+    transform: translateX(-400px);
+    animation: slideIn 3s forwards;
+}
+
+.container input {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none; 
+}
+
+@keyframes slideIn {
+    to {transform: translateX(0);}
+}
+
+#butao {
+    background-color: rgb(231, 231, 67);
+}
