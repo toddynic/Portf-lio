@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="divisao">
+        <div class="container">
+            <h3>DADOS DO ADMINISTRADOR:</h3>
+            <label>Nome:</label>
+            <input type="text" value="POPO" disabled id="popo">
+            <label>Usuário:</label>
+            <input type="text" value="admin" disabled id="popo1">
+            <label>Senha:</label>
+            <input type="text" value="1234" disabled id="senha">
+            <label>Email:</label>
+            <input type="text" value="admin1234@gmail.com"  disabled>
+             <label>Telefone:</label>
+            <input type="text" value="(31) 9 8988-8786"  disabled>
+        
+        </div>
+        <div class="container">
+            <h3>EMPRESA:</h3>
+            <label>Nome:</label>
+            <input type="text" value="Evofit" disabled>
+            <label>CNPJ:</label>
+            <input type="text" value="47.382.915/0001-64" disabled>
+             <h3>CONTATOS:</h3>
+            <label>Email</label>
+            <input type="text" value="contato@evofit.com" disabled>
+            <label>Telefone</label>
+            <input type="text" value="(31) 9 9999-9999" disabled>
+        
+            </div>
+            <div class="container">
+                <h3>CONTROLE DE USUÁRIOS:</h3>
+                <label>Plano Basic:</label>
+
+                
+                <input type="text" value="213 usuários" disabled>
+                <label>Plano Pro:</label>
+                <input type="text" value="256 usuários" disabled>
+                <label>Aula de defesa pessoal:</label>
+                <input type="text" value="63 usuários" disabled>
+                <label>Plano Kids</label>
+                <input type="text" value="21 usuários" disabled>
+                <label>Total de usuários:</label>
+                <input type="text" value="553 usuários" disabled>
+                <a href="index.html">voltar</a>
+            </div>
+        </div>
+
+        <script>
+            const doc = document.getElementById("popo");
+            const doc1 = document.getElementById("popo1");
+
+            const pass = document.getElementById("senha");
+            
+            const urll = new URLSearchParams(window.location.search);
+            let tag = urll.get("id");
+
+            let tag2 = urll.get("senha");
+
+            doc.value = tag;
+            doc1.value = tag;
+            pass.value = tag2
+        </script>
+</body>
+</html>
