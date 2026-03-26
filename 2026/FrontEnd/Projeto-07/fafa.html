@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmfit Academia | Resultados Reais em Belo Horizonte</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --black: #000000;
+            --dark-gray: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--black); color: var(--white); overflow-x: hidden; }
+        
+        /* Utilitários */
+        .text-gold { color: var(--gold) !important; }
+        .bg-gold { background-color: var(--gold) !important; }
+        .btn-gold { background-color: var(--gold); color: var(--black); font-weight: bold; border: none; transition: 0.3s; }
+        .btn-gold:hover { background-color: var(--white); color: var(--black); transform: scale(1.05); }
+
+        /* Navbar */
+        .navbar { background-color: rgba(0,0,0,0.9); border-bottom: 2px solid var(--gold); }
+        .nav-link { color: var(--white) !important; font-weight: 500; transition: 0.3s; }
+        .nav-link:hover { color: var(--gold) !important; }
+
+        /* Hero Section */
+        .hero-section {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1350&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Cards de Serviços */
+        .service-card { 
+            background: var(--white); 
+            border-radius: 15px; 
+            color: var(--black); 
+            padding: 30px;
+            transition: 0.4s;
+            border-bottom: 8px solid var(--gold);
+            height: 100%;
+        }
+        .service-card:hover { transform: translateY(-15px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .service-card i { color: var(--gold); font-size: 3rem; margin-bottom: 15px; }
+
+        /* Diferenciais */
+        .diff-item { border-left: 3px solid var(--gold); padding-left: 20px; margin-bottom: 20px; }
+
+        /* Área do Aluno Simulation */
+        .student-dashboard {
+            background: var(--dark-gray);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        footer { border-top: 4px solid var(--gold); padding: 50px 0; background: #050505; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand text-gold fw-bold fs-3" href="#"><i class="fas fa-dumbbell"></i> FARMFIT</a>
+            <button class="navbar-toggler bg-gold" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#sobre">SOBRE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos">SERVIÇOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#aluno">ÁREA DO ALUNO</a></li>
+                    <li class="nav-item ms-lg-4">
+                        <a href="https://wa.me/31995251050" class="btn btn-gold px-4 py-2">MATRICULE-SE</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-2 fw-bold mb-3">RESULTADOS <span class="text-gold">REAIS</span></h1>
+            <p class="lead mb-4 fs-4">Transforme sua vida na melhor academia do Santa Efigênia.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#servicos" class="btn btn-outline-light btn-lg px-5">Ver Treinos</a>
+                <a href="https://wa.me/31995251050" class="btn btn-gold btn-lg px-5">Começar Agora</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="text-gold mb-4">NOSSA HISTÓRIA</h2>
+                    <p class="fs-5 text-secondary">Fundada em 2022 por apaixonados por saúde, a <strong>Farmfit Academia</strong> nasceu com o propósito de democratizar o bem-estar em Belo Horizonte.</p>
+                    <div class="mt-4">
+                        <div class="diff-item">
+                            <h5>Missão</h5>
+                            <p>Promover saúde e qualidade de vida em um ambiente motivador e acessível.</p>
+                        </div>
+                        <div class="diff-item">
+                            <h5>Diferenciais</h5>
+                            <p>Profissionais qualificados, ambiente moderno, limpo e acompanhamento de resultados constante.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0 text-center">
+                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=600&q=80" alt="Treino Farmfit" class="img-fluid rounded-3 shadow-lg border border-gold">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="py-5 bg-dark">
+        <div class="container">
+            <h2 class="text-center text-gold mb-5 fw-bold">O QUE OFERECEMOS</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <i class="fas fa-weight-hanging"></i>
+                        <h3>Musculação</h3>
+                        <p>Foco em hipertrofia e fortalecimento com aparelhos de ponta.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <i class="fas fa-running"></i>
+                        <h3>Funcional</h3>
+                        <p>Treinos dinâmicos para agilidade, resistência e queima calórica.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <i class="fas fa-music"></i>
+                        <h3>Dança & Aeróbico</h3>
+                        <p>Aulas coletivas cheias de energia para cuidar da mente e do corpo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="aluno" class="py-5">
+        <div class="container">
+            <div class="student-dashboard">
+                <h3 class="text-gold text-center mb-5 fw-bold"><i class="fas fa-user-check me-2"></i> FOCO EM RESULTADOS</h3>
+                <div class="row g-4 text-center">
+                    <div class="col-md-4">
+                        <p class="mb-1 text-secondary">Frequência Mensal</p>
+                        <h4 class="display-6 fw-bold">18 DIAS</h4>
+                        <div class="progress bg-dark mt-2" style="height: 10px;">
+                            <div class="progress-bar bg-gold" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 border-start border-end border-secondary">
+                        <p class="mb-1 text-secondary">Última Avaliação</p>
+                        <h4 class="display-6 fw-bold">+2.5kg</h4>
+                        <p class="small text-gold">Massa Magra Conquistada</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="mb-1 text-secondary">Seu Personal</p>
+                        <h4 class="h4 mt-3">Profissionais Qualificados</h4>
+                        <p class="small">Acompanhamento de ponta a ponta.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-black">
+        <div class="container text-center">
+            <h2 class="text-gold mb-5">ONDE ESTAMOS</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <p class="fs-4"><i class="fas fa-map-marker-alt text-gold"></i> Bairro Santa Efigênia, Belo Horizonte – MG</p>
+                    <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+                        <a href="https://wa.me/31995251050" class="btn btn-success btn-lg"><i class="fab fa-whatsapp"></i> (31) 99525-1050</a>
+                        <a href="tel:3133540210" class="btn btn-outline-light btn-lg"><i class="fas fa-phone"></i> (31) 3354-0210</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <h3 class="text-gold fw-bold mb-4">FARMFIT ACADEMIA</h3>
+            <div class="fs-2 mb-4">
+                <a href="https://instagram.com/farmfit_" class="text-white mx-3"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white mx-3"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white mx-3"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <p class="mb-0 text-secondary small">© 2026 Farmfit Academia - CNPJ: XX.XXX.XXX/0001-XX</p>
+            <p class="text-secondary small">Desde 2022 transformando vidas através do esporte.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        :root {
+            --gold-main: rgb(207, 176, 0);
+            --gold-hover: rgb(170, 145, 0);
+        }
+
+        /* UTILIDADES E CORES */
+        .bg-gold { background-color: var(--gold-main) !important; }
+        .text-gold { color: var(--gold-main) !important; }
+        .border-gold { border-color: var(--gold-main) !important; }
+
+        /* BOTÕES CUSTOMIZADOS */
+        .btn-gold {
+            background-color: var(--gold-main);
+            border: 1px solid var(--gold-main);
+            color: #000;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 10px 25px;
+            border-radius: 8px;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-hover);
+            border-color: var(--gold-hover);
+            color: #000;
+            transform: translateY(-2px); /* Efeito sutil de flutuação */
+        }
+
+        .btn-outline-gold {
+            border: 2px solid var(--gold-main);
+            color: var(--gold-main);
+            background: transparent;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 10px 25px;
+            border-radius: 8px;
+        }
+
+        .btn-outline-gold:hover {
+            background-color: var(--gold-main);
+            color: #000;
+        }
+
+        /* Ajuste no carrossel para não esconder os controles */
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            filter: invert(1) grayscale(100) brightness(200%);
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <title>EvoFit Academia</title>
+</head>
+
+<body class="bg-light">
+
+    <header class="bg-dark py-3 shadow-sm sticky-top">
+        <div class="container d-flex align-items-center">
+            <div class="bg-gold rounded-circle me-2" style="width: 30px; height: 30px;"></div>
+            <h4 class="text-white ms-2 mb-0 fw-bold">Evo<span class="text-gold">Fit</span></h4>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="display-2 fw-bold mb-3">RESULTADOS <span class="text-gold">REAIS</span></h1>
+                <p class="lead mb-4 fs-4">Transforme sua vida na melhor academia do Santa Efigênia.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#servicos" class="btn btn-outline-light btn-lg px-5">Ver Treinos</a>
+                    <a href="https://wa.me/31995251050" class="btn btn-gold btn-lg px-5">Começar Agora</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="py-5">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="text-gold mb-4">NOSSA HISTÓRIA</h2>
+                        <p class="fs-5 text-secondary">Fundada em 2022 por apaixonados por saúde, a <strong>Farmfit Academia</strong> nasceu com o propósito de democratizar o bem-estar em Belo Horizonte.</p>
+                        <div class="mt-4">
+                            <div class="diff-item">
+                                <h5>Missão</h5>
+                                <p>Promover saúde e qualidade de vida em um ambiente motivador e acessível.</p>
+                            </div>
+                            <div class="diff-item">
+                                <h5>Diferenciais</h5>
+                                <p>Profissionais qualificados, ambiente moderno, limpo e acompanhamento de resultados constante.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4 mt-lg-0 text-center">
+                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=600&q=80" alt="Treino Farmfit" class="img-fluid rounded-3 shadow-lg border border-gold">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5 py-5 text-center">
+            <h2 class="fw-bold mb-3">Conheça a <span class="text-gold">EvoFit</span></h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <p class="text-muted fs-5">
+                        A EvoFit é a referência em Belo Horizonte. Combinamos tecnologia de ponta com um ambiente motivador para que você alcance sua melhor versão.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5">
+            <h2 class="text-center fw-bold mb-5">Nossas Mensalidades</h2>
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-md-5">
+                    <div class="card shadow-sm h-100 text-center border-0">
+                        <div class="card-body bg-dark text-light rounded shadow">
+                            <h3 class="card-title py-3">Basic</h3>
+                            <p class="text-gold display-6 fw-bold">R$ 89,90</p>
+                            <p class="text-secondary">por mês</p>
+                            <hr class="border-secondary">
+                            <ul class="list-unstyled py-3">
+                                <li class="mb-2">✔ Acesso à academia</li>
+                                <li class="mb-2">✔ Equipamentos completos</li>
+                                <li class="mb-2">✔ Avaliação física inicial</li>
+                            </ul>
+                            <button class="btn btn-outline-gold w-100 mt-3">Assinar Plano</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="card shadow h-100 text-center border-gold" style="border-width: 2px;">
+                        <div class="card-body">
+                            <span class="badge bg-gold text-dark mb-2">MAIS POPULAR</span>
+                            <h3 class="card-title py-2">Pro</h3>
+                            <p class="text-gold display-6 fw-bold">R$ 149,90</p>
+                            <p class="text-muted">por mês</p>
+                            <hr>
+                            <ul class="list-unstyled py-3">
+                                <li class="mb-2">✔ <strong>Tudo do plano Basic</strong></li>
+                                <li class="mb-2">✔ Personal Trainer</li>
+                                <li class="mb-2">✔ Treino personalizado</li>
+                                <li class="mb-2">✔ Acompanhamento nutricional</li>
+                            </ul>
+                            <button class="btn btn-gold w-100 mt-3 shadow-sm">Assinar Plano</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white mt-5 pt-5">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h5 class="text-gold fw-bold">EvoFit Academia</h5>
+                    <p class="mb-1">📍 Av. Afonso Pena, 1000 - Belo Horizonte, MG</p>
+                    <p class="mb-1">📞 (31) 99999-9999</p>
+                    <p>✉ contato@evofit.com.br</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h5>Siga-nos</h5>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="#" class="text-gold text-decoration-none">Instagram</a>
+                        <a href="#" class="text-gold text-decoration-none">Facebook</a>
+                        <a href="#" class="text-gold text-decoration-none">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center py-4 border-top border-secondary mt-3">
+                <small class="text-secondary">© 2026 EvoFit - Todos os direitos reservados</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
