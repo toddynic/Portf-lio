@@ -1,0 +1,36 @@
+DROP TABLE IF EXISTS Emprestimo;
+DROP TABLE IF EXISTS Livro;
+DROP TABLE IF EXISTS Usuarios;
+
+CREATE TABLE Usuarios (
+	id_usuario INT PRIMARY KEY,
+  	nome VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Livro (
+  id_livro INT PRIMARY KEY,
+  titulo VARCHAR(150) NOT NULL,
+  autor VARCHAR(100),
+  ano INT
+);
+  
+create table Emprestimo (
+  id_emprestimo INT PRIMARY KEY,
+  id_usuario INT,
+  id_livro INT,
+  data_emprestimo DATE,
+  data_devolucao DATe,
+  FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario),
+  FOREIGN KEY (id_livro) REFERENCES Livro(id_livro)
+);
+    
+INSERT INTO Usuarios VALUES (1, 'Maria silva');
+
+INSERT INTO Livro VALUES (1, 'Banco de Dados 1', 'Carlos Souza', 2020);
+INSERT INTO Livro VALUES (2, 'Algoritimos', 'Ana Lima', 2019);
+INSERT INTO Livro VALUES (3, 'Inteligência Artificial', 'Pedro Santos',2022);
+
+INSERT INTO Emprestimo VALUES (1, 1, 1, '2026/05/01','2026/05/10');
+INSERT INTO Emprestimo VALUES (2, 1, 2, '2026/05/02','2026/05/12');
+INSERT INTO Emprestimo VALUES (3, 1, 3, '2026/05/03','2026/05/13');
+SELECT * FROM Emprestimo;
