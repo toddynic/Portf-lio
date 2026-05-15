@@ -62,6 +62,10 @@ INSERT INTO pedidos (id_cliente, id_restaurante, valor_total, data_pedido) VALUE
 (2, 2, 58.50, '2026-05-10'),
 (3, 3, 25.00, '2026-05-11');
 
+UPDATE entregador
+SET telefone = '31931313131'
+WHERE id_entregador = 2;
+
 SELECT * FROM pedidos;
 SELECT * FROM clientes;
 SELECT * FROM restaurantes;
