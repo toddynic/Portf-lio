@@ -31,11 +31,15 @@ CREATE TABLE tipo_pagamento (
 CREATE TABLE pedidos (
     id_pedido INTEGER PRIMARY KEY AUTOINCREMENT,
     id_cliente INTEGER,
+  	id_entregador INTEGER,
+  	id_tipoPagamento INTEGER,
     id_restaurante INTEGER,
     valor_total REAL,
     data_pedido DATE,
     FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
-    FOREIGN KEY (id_restaurante) REFERENCES restaurantes(id_restaurante)
+    FOREIGN KEY (id_restaurante) REFERENCES restaurantes(id_restaurante),
+  	FOREIGN KEY (id_entregador) REFERENCES entregador(id_entregador),
+  	FOREIGN KEY (id_tipoPagamento) REFERENCES tipo_pagamento(id_pagamento)
 );
 
 INSERT INTO clientes (nome, telefone) VALUES
@@ -57,10 +61,10 @@ INSERT INTO tipo_pagamento (tipo_pagamento) VALUES
 ('Pix'),
 ('Dinheiro');
 
-INSERT INTO pedidos (id_cliente, id_restaurante, valor_total, data_pedido) VALUES
-(1, 1, 35.00, '2026-05-10'),
-(2, 2, 58.50, '2026-05-10'),
-(3, 3, 25.00, '2026-05-11');
+INSERT INTO pedidos (id_cliente, id_restaurante, id_entregador, id_tipoPagamento, valor_total, data_pedido) VALUES
+(1, 1, 1, 1, 35.00, '2026-05-10'),
+(2, 2, 2, 2, 58.50, '2026-05-10'),
+(3, 3, 3, 3, 25.00, '2026-05-11');
 
 UPDATE entregador
 SET telefone = '31931313131'
