@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-self: center;
+            width: 70%;
+            max-width: 300px;
+            height: 100%;
+            margin-top: 5cm;
+        }
+
+        input {
+            border: none;
+            background-color: rgb(129, 129, 129);
+            height: 1cm;
+            border-radius: 15px;
+            color: white;
+        }
+
+        button {
+            border: 1px, rgb(212, 212, 212), solid;
+            height: 1cm;
+            border-radius: 15px;
+            margin-top: 15px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(212, 212, 212);
+        }
+
+        label {
+            font-size: 10px;
+            padding: 5px;
+            color: rgb(240, 240, 240);
+            margin-top: 10px;
+        }
+
+        h1 {
+            color: rgb(240, 240, 240);
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="formLogin" class="card">
+        <img src="IMG-20260807-WA0039.jpg" alt=";-;" width="200px" style="align-self: center;">
+
+        <label for="">NAME</label>
+        <input type="text" id="nome" name="" required>
+
+        <label for="">EMAIL</label>
+        <input type="text" id="email" name="" required>
+
+        <label for="">PASSWORD</label>
+        <input type="text" id="senha" name="" required>
+
+        <button onclick="login()" type="submit">Sign up</button>
+
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>
