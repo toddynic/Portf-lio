@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body
+        {
+            background-color: #1f1f1f;
+            background-image: url("wall.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        header {
+            top: 0;
+            left: 0;
+            text-align: center;
+            width: 100%;
+            background-image: radial-gradient(circle, rgba(197, 197, 255,0.70), #1f1f1f);
+            position: fixed;
+            z-index: 100;
+        }
+
+        footer {
+            display: flex;
+            bottom: 0;
+            left: 0;
+            position: fixed;
+            height: 100px;
+            width: 100%;
+            background-color: #1f1f1f;
+            color: rgb(226, 226, 226);
+            align-items: center;
+            justify-content: center;
+        }
+
+        h2 {
+            margin-top: 100px ;
+            text-align: center;
+            color: white;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding-bottom: 120px;
+        }
+
+        .painel {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            margin: 10px;
+            padding: 0;
+            border-radius: 10px;
+            background-color: rgb(205, 205, 205);
+            width: 280px;
+            overflow: hidden;
+            box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
+            transition: transform 1s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 179px;
+            object-fit: cover;
+            border-bottom: 1px solid black;
+        }
+
+        .card h4 {
+            margin: 10px 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .card label {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+         .area-estudos {
+            text-align: center;
+            margin: 15px 0 30px;
+        }
+
+        .area-estudos a {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .area-estudos a:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="./IMG-20260807-WA0039.png" width="80px">
+    </header>
+
+    <h2>Cursos</h2>
+
+    <div class="painel">
+
+        <div class="card">
+            <img src="https://uniateneu.edu.br/wp-content/uploads/2026/08/Curso-de-Enfermagem-1-scaled.jpg" alt="Enfermagem">
+            <h4>Curso de Enfermagem</h4>
+            <label>R$ 300,99</label>
+        </div>
+
+        <div class="card">
+            <img src="https://blog.escolasaopelegrino.com.br/wp-content/uploads/2018/09/231114-curso-profissionalizante-de-contabilidade-vale-a-pena.jpg" alt="Contabilidade">
+            <h4>Curso de Contabilidade</h4>
+            <label>R$ 473,99</label>
+        </div>
+
+        <div class="card">
+            <img src="https://wordpress-cms-revista-prod-assets.quero.space/legacy_posts/post_images/34558/096863cc0565fd5c0d251b85f6a29d15e4223433.jpg" alt="Biologia">
+            <h4>Curso de Biologia</h4>
+            <label>R$ 593,99</label>
+        </div>
+
+        <div class="card">
+            <img src="https://www.sesc-sc.com.br/Manager/show_image.php?show_arquivo=institucional&show_campo=institucional_imagem_pq&show_chave=Institucional_id=3649" alt="Informática">
+            <h4>Curso de Informática</h4>
+            <label>R$ 369,99</label>
+        </div>
+
+        <!-- NOVOS CURSOS -->
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80" alt="Administração">
+            <h4>Curso de Administração</h4>
+            <label>R$ 429,99</label>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" alt="Economia">
+            <h4>Curso de Economia</h4>
+            <label>R$ 489,99</label>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Programação">
+            <h4>Curso de Programação</h4>
+            <label>R$ 399,99</label>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Marketing">
+            <h4>Curso de Marketing</h4>
+            <label>R$ 349,99</label>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80" alt="Direito">
+            <h4>Curso de Direito</h4>
+            <label>R$ 629,99</label>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Engenharia">
+            <h4>Curso de Engenharia</h4>
+            <label>R$ 699,99</label>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=800&q=80" alt="Design">
+            <h4>Curso de Design</h4>
+            <label>R$ 379,99</label>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Psicologia">
+            <h4>Curso de Psicologia</h4>
+            <label>R$ 559,99</label>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=800&q=80" alt="Arquitetura">
+            <h4>Curso de Arquitetura</h4>
+            <label>R$ 649,99</label>
+        </div>
+
+    </div>
+
+    <div class="area-estudos">
+        <a href="pag1.html">📚 Acessar Área de Estudos</a>
+    </div>
+
+    <footer>
+        Eleva 2026 Copyright @
+    </footer>
+
+</body>
+
+</html>
+

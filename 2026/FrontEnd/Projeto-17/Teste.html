@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eleva Cursos</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f4f6f8;
+            color: #222;
+            padding-bottom: 110px;
+        }
+
+        /* CABEÇALHO */
+        header {
+            width: 100%;
+            min-height: 85px;
+            background: linear-gradient(135deg, #151515, #333);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 7%;
+            color: white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+        }
+
+        header img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+        }
+
+        header h1 {
+            font-size: 28px;
+            color: #fff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00c3ff;
+        }
+
+        /* TÍTULO */
+        .titulo {
+            text-align: center;
+            margin: 45px 0 10px;
+        }
+
+        .titulo h2 {
+            font-size: 32px;
+            color: #222;
+        }
+
+        .titulo p {
+            color: #666;
+            margin-top: 8px;
+        }
+
+        /* PAINEL */
+        .painel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 280px));
+            justify-content: center;
+            gap: 25px;
+            padding: 30px 20px;
+        }
+
+        /* CARD */
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 175px;
+            object-fit: cover;
+        }
+
+        .conteudo {
+            padding: 18px;
+        }
+
+        .card h4 {
+            font-size: 19px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .descricao {
+            font-size: 14px;
+            color: #777;
+            min-height: 40px;
+            margin-bottom: 15px;
+        }
+
+        .preco {
+            font-size: 22px;
+            font-weight: bold;
+            color: #00a86b;
+            margin-bottom: 15px;
+        }
+
+        .botao {
+            display: block;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            padding: 11px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            background: #00a86b;
+        }
+
+        /* ÁREA DE ESTUDOS */
+        .area-estudos {
+            text-align: center;
+            margin: 15px 0 30px;
+        }
+
+        .area-estudos a {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .area-estudos a:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* RODAPÉ */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: #171717;
+            color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* CELULAR */
+        @media (max-width: 650px) {
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .titulo {
+                margin-top: 30px;
+            }
+
+            .titulo h2 {
+                font-size: 27px;
+            }
+
+            .painel {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 350px;
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <img src="./IMG-20260807-WA0039.png" alt="Logo Eleva">
+
+        <h1>Eleva Cursos</h1>
+
+        <nav>
+            <a href="#">Início</a>
+            <a href="#cursos">Cursos</a>
+            <a href="pag1.html">Estudos</a>
+        </nav>
+
+    </header>
+
+
+    <section class="titulo" id="cursos">
+        <h2>🎓 Nossos Cursos</h2>
+        <p>Escolha seu curso e comece a transformar seu futuro!</p>
+    </section>
+
+
+    <div class="painel">
+
+        <!-- ENFERMAGEM -->
+        <div class="card">
+            <img src="https://uniateneu.edu.br/wp-content/uploads/2026/08/Curso-de-Enfermagem-1-scaled.jpg"
+                 alt="Curso de Enfermagem">
+
+            <div class="conteudo">
+                <h4>Curso de Enfermagem</h4>
+                <p class="descricao">Aprenda os fundamentos da área da saúde.</p>
+                <p class="preco">R$ 300,99</p>
+                <a href="#" class="botao">Ver curso</a>
+            </div>
+        </div>
+
+
+        <!-- CONTABILIDADE -->
+        <div class="card">
+            <img src="https://blog.escolasaopelegrino.com.br/wp-content/uploads/2018/09/231114-curso-profissionalizante-de-contabilidade-vale-a-pena.jpg"
+                 alt="Curso de Contabilidade">
+
+            <div class="conteudo">
+                <h4>Curso de Contabilidade</h4>
+                <p class="descricao">Aprenda sobre finanças, contas e gestão.</p>
+                <p class="preco">R$ 473,99</p>
+                <a href="#" class="botao">Ver curso</a>
+            </div>
+        </div>
+
+
+        <!-- BIOLOGIA -->
+        <div class="card">
+            <img src="https://wordpress-cms-revista-prod-assets.quero.space/legacy_posts/post_images/34558/096863cc0565fd5c0d251b85f6a29d15e4223433.jpg"
+                 alt="Curso de Biologia">
+
+            <div class="conteudo">
+                <h4>Curso de Biologia</h4>
+                <p class="descricao">Conheça a vida, os organismos e a natureza.</p>
+                <p class="preco">R$ 593,99</p>
+                <a href="#" class="botao">Ver curso</a>
+            </div>
+        </div>
+
+
+        <!-- INFORMÁTICA -->
+        <div class="card">
+            <img src="https://www.sesc-sc.com.br/Manager/show_image.php?show_arquivo=institucional&show_campo=institucional_imagem_pq&show_chave=Institucional_id=3649"
+                 alt="Curso de Informática">
+
+            <div class="conteudo">
+                <h4>Curso de Informática</h4>
+                <p class="descricao">Aprenda tecnologia, computadores e ferramentas digitais.</p>
+                <p class="preco">R$ 369,99</p>
+                <a href="#" class="botao">Ver curso</a>
+            </div>
+        </div>
+
+
+        <!-- PROGRAMAÇÃO -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80"
+                 alt="Curso de Programação">
+
+            <div class="conteudo">
+                <h4>Curso de Programação</h4>
+                <p class="descricao">Aprenda HTML, CSS, JavaScript e lógica.</p>
+                <p class="preco">R$ 429,99</p>
+                <a href="#" class="botao">Ver curso</a>
+            </div>
+        </div>
+
+
+        <!-- ADMINISTRAÇÃO -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80"
+                 alt="Curso de Administração">
+
+            <div class="conteudo">
+                <h4>Curso de Administração</h4>
+                <p class="descricao">Aprenda gestão, liderança e organização.</p>
+                <p class="preco">R$ 399,99</p>
+                <a href="#" class="botao">Ver curso</a>
+            </div>
+        </div>
+
+
+        <!-- DESIGN -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80"
+                 alt="Curso de Design">
+
+            <div class="conteudo">
+                <h4>Curso de Design</h4>
+                <p class="descricao">Desenvolva sua criatividade e aprenda design digital.</p>
+                <p class="preco">R$ 349,99</p>
+                <a href="#" class="botao">Ver curso</a>
+            </div>
+        </div>
+
+
+        <!-- MARKETING -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=800&q=80"
+                 alt="Curso de Marketing">
+
+            <div class="conteudo">
+                <h4>Curso de Marketing</h4>
+                <p class="descricao">Aprenda estratégias para divulgar negócios.</p>
+                <p class="preco">R$ 379,99</p>
+                <a href="#" class="botao">Ver curso</a>
+            </div>
+        </div>
+
+
+        <!-- INGLÊS -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=800&q=80"
+                 alt="Curso de Inglês">
+
+            <div class="conteudo">
+                <h4>Curso de Inglês</h4>
+                <p class="descricao">Desenvolva sua comunicação em inglês.</p>
+                <p class="preco">R$ 289,99</p>
+                <a href="#" class="botao">Ver curso</a>
+            </div>
+        </div>
+
+
+        <!-- FOTOGRAFIA -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80"
+                 alt="Curso de Fotografia">
+
+            <div class="conteudo">
+                <h4>Curso de Fotografia</h4>
+                <p class="descricao">Aprenda técnicas para tirar fotos incríveis.</p>
+                <p class="preco">R$ 319,99</p>
+                <a href="#" class="botao">Ver curso</a>
+            </div>
+        </div>
+
+
+        <!-- EDUCAÇÃO FÍSICA -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80"
+                 alt="Curso de Educação Física">
+
+            <div class="conteudo">
+                <h4>Educação Física</h4>
+                <p class="descricao">Estude exercícios, esportes e qualidade de vida.</p>
+                <p class="preco">R$ 449,99</p>
+                <a href="#" class="botao">Ver curso</a>
+            </div>
+        </div>
+
+
+        <!-- ARQUITETURA -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"
+                 alt="Curso de Arquitetura">
+
+            <div class="conteudo">
+                <h4>Curso de Arquitetura</h4>
+                <p class="descricao">Conheça projetos, plantas e conceitos arquitetônicos.</p>
+                <p class="preco">R$ 499,99</p>
+                <a href="#" class="botao">Ver curso</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="area-estudos">
+        <a href="pag1.html">📚 Acessar Área de Estudos</a>
+    </div>
+
+
+    <footer>
+        Eleva Cursos © 2026 — Todos os direitos reservados
+    </footer>
+
+</body>
+</html>
