@@ -1,0 +1,114 @@
+*
+{
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+}
+
+body
+{
+      background-color: #202020;
+}
+
+header
+{
+      width: 100%;
+      position: absolute;
+      background-color: black;
+      color: white;
+}
+
+.comeco
+{
+      display: flex;
+      height: 100vh;
+      width: 100%;
+      background: linear-gradient(#3030FF, rgb(100,100,255), #3030FF);
+      justify-content: center;
+}
+
+.inicio
+{
+      align-content: center;
+}
+
+#butao
+{
+      display: flex;
+      justify-content: center;
+}
+
+.button
+{
+      background: none;
+      border: 5px, solid, white;
+      color: white;
+      padding: 5px;
+      margin: 5px;
+      font-size: 15px;
+      border-radius: 10px;
+}
+
+#Download 
+{
+      color: orange;
+      border-color: orange;
+}
+
+.textu
+{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-top: 50px;
+
+}
+
+.textu h2
+{
+      color: #5050ff;
+      margin-bottom: 30px;
+}
+
+.textu p
+{
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.7);
+      width: 600px;
+      text-align: left;
+      
+}
+
+.textu h3
+{
+      color: white;
+      margin-bottom: 10px;
+}
+
+.divisor
+{
+      display: flex;
+      justify-self: center;
+      width: 100%;
+      height: 10px;
+}
+
+#inter
+{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+}
+
+#inter div p
+{
+      width: 600px;
+}
+
+#logos
+{
+      display: flex;
+      margin: 20px auto;
+      width: 500px;
+      justify-content: space-around;
+}
