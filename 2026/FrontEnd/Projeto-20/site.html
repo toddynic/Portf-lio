@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outubro Rosa | Conscientização e Prevenção</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fontes Google Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            300: '#fda4af',
+                            400: '#fb7185',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be123c',
+                            800: '#9f1239',
+                            900: '#881337',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-b from-pink-100 via-rose-50 to-pink-100 text-slate-800 font-sans antialiased min-h-screen">
+
+    <!-- Cabeçalho -->
+    <header class="bg-white/90 backdrop-blur-md border-b-2 border-pink-200 sticky top-0 z-40 shadow-sm">
+        <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 font-extrabold text-xl text-brand-700 tracking-tight">
+                <i class="fa-solid fa-ribbon text-brand-500 text-2xl"></i> Outubro<span class="text-brand-500">Rosa</span>
+            </a>
+            <nav class="hidden sm:flex items-center gap-6 text-sm font-semibold text-brand-900">
+                <a href="#prevencao" class="hover:text-brand-500 transition-colors">Prevenção</a>
+                <a href="#sintomas" class="hover:text-brand-500 transition-colors">Sintomas</a>
+                <a href="#mitos" class="hover:text-brand-500 transition-colors">Mitos e Verdades</a>
+                <a href="#videos" class="hover:text-brand-500 transition-colors">Vídeos</a>
+                <a href="#quiz" class="hover:text-brand-500 transition-colors">Quiz</a>
+                <a href="#tratamentos" class="hover:text-brand-500 transition-colors">Tratamentos</a>
+            </nav>
+            <a href="#quiz" class="sm:hidden px-4 py-1.5 bg-brand-600 text-white text-xs font-bold rounded-full shadow-md">
+                Quiz
+            </a>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="py-16 sm:py-20 text-center max-w-3xl mx-auto px-4">
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-brand-900 leading-tight mb-4">
+            Prevenir é a melhor forma de se cuidar.
+        </h1>
+        <p class="text-base sm:text-lg text-brand-800/80 font-medium leading-relaxed max-w-xl mx-auto mb-8">
+            Informações simples, diretas e confiáveis sobre o câncer de mama. A detecção precoce salva vidas.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+            <a href="#prevencao" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition-all shadow-md hover:shadow-lg text-sm">
+                Aprender a se prevenir
+            </a>
+            <a href="#quiz" class="px-6 py-3 bg-white hover:bg-pink-50 text-brand-700 border-2 border-pink-300 font-bold rounded-xl transition-all text-sm shadow-sm">
+                Fazer Quiz Rápido
+            </a>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-5xl mx-auto px-4 space-y-16 pb-20">
+
+        <!-- Prevenção -->
+        <section id="prevencao" class="scroll-mt-20">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-900">Como Prevenir?</h2>
+                <p class="text-brand-700 text-sm mt-1 font-medium">Hábitos simples reduzem até 30% os riscos de desenvolvimento.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-6 rounded-2xl border-2 border-pink-200 shadow-sm text-center hover:border-brand-400 transition-all">
+                    <h3 class="font-bold text-brand-900 mb-1">Alimentação</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Consuma mais frutas, legumes e evite alimentos ultraprocessados.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-2 border-pink-200 shadow-sm text-center hover:border-brand-400 transition-all">
+                    <h3 class="font-bold text-brand-900 mb-1">Exercícios</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Pratique pelo menos 150 minutos de caminhada ou treino semanal.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-2 border-pink-200 shadow-sm text-center hover:border-brand-400 transition-all">
+                    <h3 class="font-bold text-brand-900 mb-1">Evite o Álcool</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Reduzir ou evitar o consumo de álcool diminui os riscos de tumores.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-2 border-pink-200 shadow-sm text-center hover:border-brand-400 transition-all">
+                    <h3 class="font-bold text-brand-900 mb-1">Exames de Rotina</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Mantenha a consulta ginecológica e a mamografia em dia.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sintomas -->
+        <section id="sintomas" class="scroll-mt-20">
+            <div class="bg-gradient-to-br from-white to-pink-50 rounded-3xl p-6 sm:p-10 border-2 border-pink-200 shadow-sm">
+                <div class="max-w-xl mx-auto text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-900">Sinais e Sintomas</h2>
+                    <p class="text-brand-700 text-sm mt-1 font-medium">Conheça o seu corpo. Fique atenta às seguintes alterações:</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-pink-200 shadow-sm">
+                        <div>
+                            <h4 class="font-bold text-brand-900 text-sm">Nódulo ou Caroço</h4>
+                            <p class="text-xs text-slate-600 mt-0.5">Caroço indolores na mama, axila ou pescoço.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-pink-200 shadow-sm">
+                        <div>
+                            <h4 class="font-bold text-brand-900 text-sm">Secreção Mamilo</h4>
+                            <p class="text-xs text-slate-600 mt-0.5">Saída espontânea de líquido ou sangue pelos mamilos.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-pink-200 shadow-sm">
+                        <div>
+                            <h4 class="font-bold text-brand-900 text-sm">Mudanças na Pele</h4>
+                            <p class="text-xs text-slate-600 mt-0.5">Pele vermelha, retraída ou com textura de casca de laranja.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-pink-200 shadow-sm">
+                        <div>
+                            <h4 class="font-bold text-brand-900 text-sm">Alteração no Mamilo</h4>
+                            <p class="text-xs text-slate-600 mt-0.5">Inversão (afundamento) ou dor persistente no mamilo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mitos e Verdades -->
+        <section id="mitos" class="scroll-mt-20">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-900">Mitos e Verdades</h2>
+                <p class="text-brand-700 text-sm mt-1 font-medium">Clique nos cartões para desmistificar dúvidas comuns.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Card 1 -->
+                <div class="bg-white border-2 border-pink-200 p-6 rounded-2xl shadow-sm cursor-pointer hover:border-brand-500 transition-all" onclick="toggleMito(1)">
+                    <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-pink-100 text-brand-700" id="badge-1">PERGUNTA</span>
+                    <h3 class="font-bold text-slate-800 text-sm mt-3 mb-2">Homens podem ter câncer de mama?</h3>
+                    <p class="text-xs text-slate-600 hidden leading-relaxed" id="resposta-1">
+                        <strong class="text-emerald-600 block mb-1 text-sm font-bold">VERDADE!</strong> Embora seja raro (cerca de 1% dos casos), homens também possuem tecido mamário e podem desenvolver a doença.
+                    </p>
+                    <span class="text-xs text-brand-600 font-bold block mt-4" id="btn-1">Clique para ver a resposta</span>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white border-2 border-pink-200 p-6 rounded-2xl shadow-sm cursor-pointer hover:border-brand-500 transition-all" onclick="toggleMito(2)">
+                    <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-pink-100 text-brand-700" id="badge-2">PERGUNTA</span>
+                    <h3 class="font-bold text-slate-800 text-sm mt-3 mb-2">Usar sutiã com aro provoca a doença?</h3>
+                    <p class="text-xs text-slate-600 hidden leading-relaxed" id="resposta-2">
+                        <strong class="text-brand-600 block mb-1 text-sm font-bold">MITO!</strong> Não existe nenhuma relação científica entre o uso de sutiã de qualquer tipo e o surgimento de tumores.
+                    </p>
+                    <span class="text-xs text-brand-600 font-bold block mt-4" id="btn-2">Clique para ver a resposta</span>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white border-2 border-pink-200 p-6 rounded-2xl shadow-sm cursor-pointer hover:border-brand-500 transition-all" onclick="toggleMito(3)">
+                    <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-pink-100 text-brand-700" id="badge-3">PERGUNTA</span>
+                    <h3 class="font-bold text-slate-800 text-sm mt-3 mb-2">Só desenvolve quem tem histórico na família?</h3>
+                    <p class="text-xs text-slate-600 hidden leading-relaxed" id="resposta-3">
+                        <strong class="text-brand-600 block mb-1 text-sm font-bold">MITO!</strong> Mais de 80% das mulheres diagnosticadas NÃO possuem nenhum parente com histórico da doença.
+                    </p>
+                    <span class="text-xs text-brand-600 font-bold block mt-4" id="btn-3">Clique para ver a resposta</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vídeos -->
+        <section id="videos" class="scroll-mt-20">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-900">Vídeos Explicativos</h2>
+                <p class="text-brand-700 text-sm mt-1 font-medium">Orientações visuais rápidas para o dia a dia.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Vídeo 1 -->
+                <div class="bg-white rounded-2xl border-2 border-pink-200 p-4 shadow-sm">
+                    <div class="aspect-video bg-pink-50 rounded-xl overflow-hidden mb-3">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/pLRn4uOfgW8" title="Autoobservação das mamas" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="font-bold text-brand-900 text-sm">Como realizar a autoobservação</h3>
+                    <p class="text-xs text-slate-600 mt-1">Guia prático simples para conhecer as alterações do próprio corpo.</p>
+                </div>
+                <!-- Vídeo 2 -->
+                <div class="bg-white rounded-2xl border-2 border-pink-200 p-4 shadow-sm">
+                    <div class="aspect-video bg-pink-50 rounded-xl overflow-hidden mb-3">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/xWUQBe8DzII" title="Importância da Mamografia" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="font-bold text-brand-900 text-sm">Entendendo a Mamografia</h3>
+                    <p class="text-xs text-slate-600 mt-1">Saiba como o exame funciona e por que ele é indispensável.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz -->
+        <section id="quiz" class="scroll-mt-20">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 border-2 border-pink-300 shadow-md max-w-2xl mx-auto">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-extrabold text-brand-900 mt-2">Quiz Rápido de Prevenção</h2>
+                </div>
+
+                <div id="quiz-box">
+                    <p class="text-sm font-bold text-slate-800 mb-4" id="quiz-q">Qual exame é o principal aliado para a detecção precoce do câncer de mama?</p>
+                    <div class="space-y-2" id="quiz-opts">
+                        <button onclick="checkQuiz(0)" class="w-full text-left p-3.5 text-xs sm:text-sm rounded-xl border border-pink-200 bg-pink-50/50 hover:bg-pink-100 transition-colors font-medium text-slate-700">
+                            A) Apenas exame de sangue rotineiro
+                        </button>
+                        <button onclick="checkQuiz(1)" class="w-full text-left p-3.5 text-xs sm:text-sm rounded-xl border border-pink-200 bg-pink-50/50 hover:bg-pink-100 transition-colors font-medium text-slate-700">
+                            B) Mamografia de rastreamento periódica
+                        </button>
+                        <button onclick="checkQuiz(2)" class="w-full text-left p-3.5 text-xs sm:text-sm rounded-xl border border-pink-200 bg-pink-50/50 hover:bg-pink-100 transition-colors font-medium text-slate-700">
+                            C) Ultrassom abdominal simples
+                        </button>
+                    </div>
+                    <div id="quiz-res" class="mt-4 p-4 rounded-xl text-xs font-medium hidden"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tratamentos -->
+        <section id="tratamentos" class="scroll-mt-20">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-900">Tratamentos Confiáveis</h2>
+                <p class="text-brand-700 text-sm mt-1 font-medium">A medicina evoluiu. Cada caso possui uma indicação específica.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="bg-white p-6 rounded-2xl border-2 border-pink-200 shadow-sm">
+                    <h3 class="font-bold text-brand-900 text-sm mb-2 flex items-center gap-2">
+                        Cirurgia
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Remoção do tumor preservando ao máximo a mama (com possibilidade de reconstrução imediata).</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-2 border-pink-200 shadow-sm">
+                    <h3 class="font-bold text-brand-900 text-sm mb-2 flex items-center gap-2">
+                        Quimioterapia
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Uso de medicamentos específicos para eliminar ou conter células tumorais.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-2 border-pink-200 shadow-sm">
+                    <h3 class="font-bold text-brand-900 text-sm mb-2 flex items-center gap-2">
+                        Radioterapia
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Aplicação focalizada de radiação para destruição celular na região afetada.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-brand-900 text-pink-100 border-t-4 border-pink-400 py-8 text-center text-xs">
+        <p class="font-semibold">&copy; 2026 Outubro Rosa. Conteúdo estritamente informativo.</p>
+    </footer>
+
+    <!-- Widget VLibras do Governo Federal -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- Scripts do Site -->
+    <script>
+        function toggleMito(id) {
+            const resp = document.getElementById(`resposta-${id}`);
+            const btn = document.getElementById(`btn-${id}`);
+            if (resp.classList.contains('hidden')) {
+                resp.classList.remove('hidden');
+                btn.innerText = "Ocultar resposta";
+            } else {
+                resp.classList.add('hidden');
+                btn.innerText = "Clique para ver a resposta";
+            }
+        }
+
+        function checkQuiz(index) {
+            const res = document.getElementById('quiz-res');
+            res.classList.remove('hidden');
+            if (index === 1) {
+                res.className = "mt-4 p-4 rounded-xl text-xs bg-emerald-50 text-emerald-900 border border-emerald-300 font-semibold";
+                res.innerHTML = "<i class='fa-solid fa-circle-check text-emerald-600 mr-1'></i> <strong>Correto!</strong> A mamografia é o exame principal para identificar alterações precocemente.";
+            } else {
+                res.className = "mt-4 p-4 rounded-xl text-xs bg-rose-100 text-brand-900 border border-pink-300 font-semibold";
+                res.innerHTML = "<i class='fa-solid fa-circle-xmark text-brand-600 mr-1'></i> <strong>Incorreto.</strong> A resposta correta é a B) Mamografia de rastreamento periódica.";
+            }
+        }
+    </script>
+</body>
+</html>
